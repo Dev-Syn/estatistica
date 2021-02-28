@@ -5,10 +5,13 @@ dados = np.loadtxt('dados.txt')
 lista = np.array(dados)
 
 lista_ordenada = np.sort(lista)
+tam = len(lista_ordenada)
 
+
+##############################################################
+#Calculo da média
 soma = 0
 i = 0
-tam = len(lista_ordenada)
 
 while i < tam:
     soma += lista_ordenada[i]
@@ -20,17 +23,21 @@ print("Esse é o array em ordem crescente: \n" , lista_ordenada)
 print("A média é: ", round(media))
 
 ##############################################################
+#calculo da moda.
+cont = 0
+maior = 0
 
-cont_r = 0
-i = 0
+for i in range(lista_ordenada):
+    cont = 0 #reiniciando o contador caso, haja uma nova ocorrência
+    for j in range(lista_ordenada):
+        if (lista_ordenada[i] == lista_ordenada[j]):
+            cont += 1
+    if (maior < cont) :
+        maior = cont
+        moda = lista_ordenada[i]
 
-while i < tam:
-    if i == lista_ordenada[i]:
-        repete = lista_ordenada[i]
-        cont_r += 1
-    i += 1
-
-############################################################
+print("A moda é: ", moda, "E se repete: ", maior)
+##############################################################
 
 if tam % 2 == 0:
     #se for par
