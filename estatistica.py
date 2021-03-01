@@ -39,7 +39,7 @@ def mediana(lista):
         n1 = lista_ordenada[j]
         n2 = lista_ordenada[j2]
 
-        print(n1, n2)
+        #print(n1, n2)
         mediana = (n1 + n2) / 2
         print("Comprimento par.")
 
