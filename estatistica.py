@@ -4,7 +4,11 @@ dados = np.loadtxt('dados.txt')
 
 lista = np.array(dados)
 
-lista_ordenada = np.sort(lista)
+nl = lista.astype(int)
+
+lista_ordenada = np.sort(nl)
+
+#lista_teste = [1,3,4,5,6,7,6,5,6,7,6,7]
 
 tam = len(lista_ordenada)
 
@@ -45,7 +49,26 @@ def mediana(lista):
         return mediana
 
 
+def moda(lista):
+    tam = len(lista)
+    cont = 0
+    maior = 0
+
+    for i in range(tam):
+        cont = 0 #reiniciando o contador caso, haja uma nova ocorrência
+        for j in range(tam):
+            if (lista[i] == lista[j]):
+                cont += 1
+        if (maior < cont) :
+            maior = cont
+            moda = lista[i]
+
+    return moda, maior
+
+
+
 #### Finalização
+
 
 print("Dados ordenados: \n", lista_ordenada)
 
@@ -54,3 +77,6 @@ print("A média arredondada é: ", round(media))
 
 mediana = mediana(lista_ordenada)
 print("Nesse caso a mediana é: ", mediana)
+
+moda, maior = moda(lista_ordenada)
+print("A moda é: ", moda, "E se repitiu: ", maior, "vezes.")
