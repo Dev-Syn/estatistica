@@ -28,9 +28,9 @@ print("A média é: ", round(media))
 cont = 0
 maior = 0
 
-for i in range(lista_ordenada):
+for i in range(tam):
     cont = 0 #reiniciando o contador caso, haja uma nova ocorrência
-    for j in range(lista_ordenada):
+    for j in range(tam):
         if (lista_ordenada[i] == lista_ordenada[j]):
             cont += 1
     if (maior < cont) :

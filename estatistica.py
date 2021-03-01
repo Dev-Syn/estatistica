@@ -12,6 +12,11 @@ lista_ordenada = np.sort(nl)
 
 tam = len(lista_ordenada)
 
+#Calculo de quadrantes.
+q1 = lista_ordenada[round((tam * 0.25)-1)]
+q3 = lista_ordenada[round(tam*0.75)]
+
+
 def media(lista):
     soma = 0
     i = 0
@@ -50,7 +55,7 @@ def mediana(lista):
 
 
 def moda(lista):
-    tam = len(lista)
+    #tam = len(lista)
     cont = 0
     maior = 0
 
@@ -65,18 +70,25 @@ def moda(lista):
 
     return moda, maior
 
+###########################
 
 
 #### Finalização
 
-
 print("Dados ordenados: \n", lista_ordenada)
 
-media = media(lista_ordenada)
-print("A média arredondada é: ", round(media))
+print("O primeiro quartil é delimitado por: ", q1, ".")
 
 mediana = mediana(lista_ordenada)
-print("Nesse caso a mediana é: ", mediana)
+print("Nesse caso a mediana é: ", mediana, "(Segundo Quartil.)")
+
+print("O valor que delimita o terceiro quartil é: ", q3, ".")
 
 moda, maior = moda(lista_ordenada)
-print("A moda é: ", moda, "E se repitiu: ", maior, "vezes.")
+print("A moda entre os dados é: ", moda, "E se repitiu: ", maior, "vezes.")
+
+media = media(lista_ordenada)
+print("A média arredondada dos dados é: ", round(media), ".")
+
+
+'''O vetor ordenado, O valor do primeiro quartil, A mediana (que é o valor do segundo quartil), O valor do terceiro quartil, a moda ocorrente no vetor, e a média dos dados no vetor'''
