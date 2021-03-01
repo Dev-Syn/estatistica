@@ -46,9 +46,12 @@ def mediana(lista):
 
 
 #### Finalização
+
 media = media(lista_ordenada)
 
 mediana = mediana(lista_ordenada)
 
+
+print("Dados ordenados: \n", lista_ordenada)
 print("A média arredondada é: ", round(media))
 print("Nesse caso a mediana é: ", mediana)
