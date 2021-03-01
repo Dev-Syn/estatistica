@@ -5,6 +5,7 @@ dados = np.loadtxt('dados.txt')
 lista = np.array(dados)
 
 lista_ordenada = np.sort(lista)
+
 tam = len(lista_ordenada)
 
 
@@ -38,6 +39,7 @@ for i in range(lista_ordenada):
 
 print("A moda é: ", moda, "E se repete: ", maior)
 ##############################################################
+#calculo da mediana.
 
 if tam % 2 == 0:
     #se for par
