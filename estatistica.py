@@ -1,6 +1,6 @@
 import numpy as np
 
-dados = np.loadtxt('dados.txt')
+dados = np.loadtxt('dados_par.txt')
 
 lista = np.array(dados)
 
