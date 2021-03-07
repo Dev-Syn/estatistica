@@ -1,20 +1,21 @@
 import numpy as np
 
-dados = np.loadtxt('dados_par.txt')
+dados = np.loadtxt('dados_impar.txt')
 
-lista = np.array(dados)
+lista = np.array(dados) # convertemos o conteúdo da variável em um array do tipo tratado pela biblioteca.
 
-nl = lista.astype(int)
+nl = lista.astype(int) 
 
-lista_ordenada = np.sort(nl)
+lista_ordenada = np.sort(nl) #criando uma variável que recebe o conteúdo do vetor ordenado de forma crescente.
 
 #lista_teste = [1,3,4,5,6,7,6,5,6,7,6,7]
 
-tam = len(lista_ordenada)
+tam = len(lista_ordenada) 
+
 
 #Calculo de quadrantes.
-q1 = lista_ordenada[round((tam * 0.25)-1)]
-q3 = lista_ordenada[round(tam*0.75)]
+q1 = lista_ordenada[round((tam * 0.25)-1)] # Essa linha eu usei a lógica de porcentagem pra definir o primeiro quadrante.
+q3 = lista_ordenada[round(tam*0.75)] # mesma coisa para o 3º
 
 
 def media(lista):
@@ -53,6 +54,8 @@ def mediana(lista):
         
         return mediana
 
+''' Essa função  recebe a lista como argumento, e aqui ela compara se for impar ou par, como a eli disse. e no caso ela tem 2 returns, um para caso for par, e outro para caso for impar. '''
+
 
 def moda(lista):
     #tam = len(lista)
@@ -70,10 +73,7 @@ def moda(lista):
 
     return moda, maior
 
-###########################
-
-
-#### Finalização
+############################### Finalização
 
 print("Dados ordenados: \n", lista_ordenada)
 
